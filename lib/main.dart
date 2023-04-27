@@ -12,7 +12,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: SafeArea(child: Text("Hello lakhan here"),),
+        body: SafeArea(
+          child:
+          Expanded(
+          flex: 15,
+            child: Container(
+
+              constraints: BoxConstraints.expand(),
+              child:Center(child: Image.asset('assets/images/login_img3.jpg')), // <-- SEE HERE
+            ),
+          ),
+
+        ),
+
       ),
     );
   }

@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
       return Scaffold(
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: Colors.yellowAccent,
         body: SafeArea(
           child: Center(
             child: Form(
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
                     backgroundImage: AssetImage("assets/images/login_img3.jpg"),
                   ),
                   Padding(
-                    padding: EdgeInsets.all(12.00),
+                    padding: EdgeInsets.all(35.00),
                     child: TextFormField(
                     validator: (value){
 
@@ -87,7 +87,7 @@ class MyApp extends StatelessWidget {
                     onTap: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context)=>Signup())
+                          MaterialPageRoute(builder: (context)=>MainSignup())
                       );
                     },
                       child: Text('Sign Up',style: TextStyle(fontSize: 30),

@@ -2,17 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:login_signup/main.dart';
 
+import 'homepage.dart';
 
-class MainSignup extends StatelessWidget {
-  const MainSignup({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Signup(),
-    );
-  }
-}
+
 
 
 class Signup extends StatelessWidget {
@@ -21,9 +14,20 @@ class Signup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.greenAccent,
+    return MaterialApp(
+
+      home: Scaffold(
+
         body: SafeArea(
+      child:Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/login_img2.png'),
+                fit: BoxFit.cover,
+          ),
+
+        ),
+
           child: Center(
             child: Form(
               key: _formkey,
@@ -154,18 +158,16 @@ class Signup extends StatelessWidget {
                                     BorderSide(width: 3, color: Colors.black),
                                 borderRadius: BorderRadius.circular(50.00)))),
                   ),
-                  InkWell(
-                    onTap: (){
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context)=>Main())
-                      );
-                    },
-                    child: ElevatedButton(
+                ElevatedButton(
 
                       onPressed: () {
                         if (_formkey.currentState!.validate()) {
                           print("hurre");
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context)=>HomePage())
+                          );
+
                         } else {
                           print("Not valid");
                         }
@@ -182,12 +184,14 @@ class Signup extends StatelessWidget {
                       ),
 
                     ),
-                  )
+
                 ],
               ),
             ),
           ),
         ),
-      );
+      )
+    )
+    );
   }
 }

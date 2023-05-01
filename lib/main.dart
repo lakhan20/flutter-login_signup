@@ -87,7 +87,7 @@ class MyApp extends StatelessWidget {
                     onTap: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context)=>MainSignup())
+                          MaterialPageRoute(builder: (context)=>Signup())
                       );
                     },
                       child: Text('Sign Up',style: TextStyle(fontSize: 30),
